@@ -30,6 +30,7 @@ public class CircularArrayList<E> extends AbstractList<E> {
         return size;
     }
 
+    @SuppressWarnings("unchecked")
     @Override
     public E get(int index) {
         checkIndexRange(index);
@@ -37,6 +38,7 @@ public class CircularArrayList<E> extends AbstractList<E> {
         return (E) elements[realIndex];
     }
 
+    @SuppressWarnings("unchecked")
     @Override
     public E set(int index, E element) {
         checkIndexRange(index);
@@ -70,6 +72,7 @@ public class CircularArrayList<E> extends AbstractList<E> {
         modCount++;
     }
 
+    @SuppressWarnings("unchecked")
     @Override
     public E remove(int index) {
         checkIndexRange(index);
