@@ -4,26 +4,27 @@ import java.util.AbstractList;
 import java.util.Arrays;
 import java.util.Collection;
 
-public class ArrayList<E> extends AbstractList<E> {
+public class PlainArrayList<E> extends AbstractList<E> {
     private static final int DEFAULT_INITIAL_CAPACITY = 10;
 
     private Object[] elements;
     private int size;
 
-    public ArrayList() {
+    public PlainArrayList() {
         this(DEFAULT_INITIAL_CAPACITY);
     }
 
-    public ArrayList(int initialCapacity) {
+    public PlainArrayList(int initialCapacity) {
         elements = new Object[initialCapacity];
         size = 0;
     }
 
-    public ArrayList(Collection<? extends E> c) {
+    public PlainArrayList(Collection<? extends E> c) {
         elements = c.toArray();
         size = c.size();
     }
 
+    @SuppressWarnings("unchecked")
     @Override
     public E get(int index) {
         checkIndexRange(index);
@@ -35,6 +36,7 @@ public class ArrayList<E> extends AbstractList<E> {
         return size;
     }
 
+    @SuppressWarnings("unchecked")
     @Override
     public E set(int index, E element) {
         checkIndexRange(index);
@@ -57,6 +59,7 @@ public class ArrayList<E> extends AbstractList<E> {
         modCount++;
     }
 
+    @SuppressWarnings("unchecked")
     @Override
     public E remove(int index) {
         checkIndexRange(index);
